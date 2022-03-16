@@ -1,5 +1,159 @@
+:root {
+    --background-light: rgb(200, 200, 200);
+    --text-dark: rgb(5, 5, 5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Poppins, sans-serif;
+    font-weight: 900;
+}
+
+h1 {
+    line-height: 11rem;
+    font-size: 10rem;
+}
+
+h2 {
+    font-size: 3.157rem;
+}
+
+h3 {
+    font-size: 2.369rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.777rem;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+p {
+    font-family: Karla, sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
 header,
 section {
+    padding: 0 10% 0 10%;
     height: fit-content;
-    min-height: 100vh;
+    min-height: 90vh;
+}
+
+.name-title {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 1rem 0 2rem 0;
+}
+
+.name-title h1 {
+    grid-area: 1 / 1 / 1 / 3;
+    margin: 0px;
+    text-align: start;
+}
+
+.name-title h1:nth-child(2) {
+    grid-area: 2 / 2 / 2 / 4;
+    text-align: end;
+}
+
+nav {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav li {
+    list-style: none;
+}
+
+.title-and-paragraph p {
+    margin-top: 4rem;
+    font-size: 1.777rem;
+    line-height: 3.5rem;
+    max-width: 50ch;
+}
+
+.project-content {
+    /* display: grid;
+    grid-template-columns: 1fr 5vw 1fr;
+    gap: 2rem; */
+}
+
+article {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6rem;
+}
+
+article:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.article-graphic {
+    background-color: red;
+    height: 100%;
+    width: 40%;
+}
+
+.article-info {
+    max-width: 30%;
+    padding: 0 1.5rem 0 1.5rem;
+    /* background-color: var(--background-light); */
+}
+
+.forwarding-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+footer {
+    padding: 0 10% 3rem 10%;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
 }
