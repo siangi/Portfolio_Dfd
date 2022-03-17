@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,700;0,900;1,900&family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200..700&family=Poppins:ital,wght@0,400;0,700;0,900;1,900&family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <title>Portfolio Simon Gisler</title>
 </head>
 <body>
@@ -16,13 +19,15 @@
             <h1>SIMON</h1>
             <h1>GISLER</h1>
         </div>
-        <h3>Design for Developers Portfolio</h3>
-        <nav>
-            <ul>
-                <li><a class="underline-on-hover" href="#projects">projects v</a></li>
-            </ul>
-        </nav>
+        <h3>Design for Developers Portfolio</h3>     
     </header>
+    <nav>
+        <ul>
+            <li><a class="underline-on-hover" id="home-link" href="#home">home</a></li>
+            <li><a class="underline-on-hover" href="https://youtu.be/dQw4w9WgXcQ">contact</a></li>
+            <li><a class="underline-on-hover" href="#projects">projects v</a></li>
+        </ul>
+    </nav>
     <main>
         <section class="title-and-paragraph" id="introduction">
             <h2>Introduction</h2>
@@ -36,7 +41,7 @@
                     <div class="article-info">
                         <h3 class="article-title">fonts and cards</h3>
                         <div class="forwarding-links"> 
-                            <a class="underline-on-hover" href="fonts-and-cards.html">details</a>
+                            <a class="underline-on-hover" href="projectPages/fonts-and-cards.html">details</a>
                             <a class="underline-on-hover" href="https://siangi.github.io/fonts-and-cards/">live Website</a>
                         </div>
                     </div>
@@ -46,7 +51,7 @@
                     <div class="article-info">
                         <h3 class="article-title">colors and animations</h3>
                         <div class="forwarding-links"> 
-                            <a class="underline-on-hover" href="colors-and-animations.html">details</a>
+                            <a class="underline-on-hover" href="projectPages/colors-and-animations.html">details</a>
                             <a class="underline-on-hover" href="https://siangi.github.io/colors-and-animations/">live Website</a>
                         </div>
                     </div>
@@ -56,7 +61,7 @@
                     <div class="article-info">
                         <h3 class="article-title">responsive design</h3>
                         <div class="forwarding-links"> 
-                            <a class="underline-on-hover" href="responsive-design.html">details</a>
+                            <a class="underline-on-hover" href="projectPages/responsive-design.html">details</a>
                             <a class="underline-on-hover" href="https://siangi.github.io/responsive-design/">live Website</a>
                         </div>
                     </div>
@@ -66,7 +71,7 @@
                     <div class="article-info">
                         <h3 class="article-title">designing with frameworks</h3>
                         <div class="forwarding-links"> 
-                            <a class="underline-on-hover" href="designing-with-frameworks.html">details</a>
+                            <a class="underline-on-hover" href="projectPages/designing-with-frameworks.html">details</a>
                             <a class="underline-on-hover" href="https://siangi.github.io/designing-with-frameworks/">live Website</a>
                         </div>
                     </div>
@@ -81,10 +86,11 @@
     <footer>
         <ul>
             <li><a class="underline-on-hover" href="#home">Home</a></li>
-            <li><a class="underline-on-hover" href="#fonts-and-cards">Projects</a></li>
+            <li><a class="underline-on-hover" href="#projects">Projects</a></li>
             <li><a class="underline-on-hover" href="https://youtu.be/dQw4w9WgXcQ">Hacky stuff</a></li>
         </ul>
         <a></a>
     </footer>
+    <script src="animations.js"></script>
 </body>
 </html>
