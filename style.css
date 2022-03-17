@@ -221,8 +221,7 @@ article {
 }
 
 article:hover {
-    scale: 1.1;
-    translate: 12.5%;
+    transform: scale(1.1) translate(12.5%, 0);
 }
 
 article:nth-child(2n) {
@@ -230,7 +229,7 @@ article:nth-child(2n) {
 }
 
 article:nth-child(2n):hover {
-    translate: -12.5%;
+    transform: scale(1.1) translate(-12.5%, 0);
 }
 
 .article-graphic {
