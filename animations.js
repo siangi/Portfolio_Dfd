@@ -1,8 +1,10 @@
 "use strict";
 
 window.onload = () => {
+    headerFadeIn();
     fadeHomeLink();
     navbarLinkArrows();
+    articleImagesScaling();
 };
 
 // header flying in
@@ -16,6 +18,22 @@ window.onload = () => {
 // fix the navbar when you scroll out of the header, show "home" link
 
 // as soon as we leave the header, the home link appears.
+function headerFadeIn() {
+    gsap.from(".name-title .left", {
+        x: "-10vw",
+        opacity: 0.1,
+        // rotateY: 30,
+        duration: 0.7,
+    });
+
+    gsap.from(".name-title .right", {
+        x: "+10vw",
+        opacity: 0.1,
+        // rotateY: 30,
+        duration: 0.7,
+    });
+}
+
 function fadeHomeLink() {
     gsap.to("#home-link", {
         opacity: 1,
@@ -44,4 +62,23 @@ function navbarLinkArrows() {
         },
         duration: 0.1,
     });
+}
+
+function articleImagesScaling() {
+    let targets = document.querySelectorAll("article");
+
+    for (let i = 0; i < targets.length; i++) {
+        let article = targets[i];
+        console.log("test");
+
+        gsap.from(article, {
+            opacity: 0.3,
+            scrollTrigger: {
+                trigger: article,
+                start: "top 90%",
+                end: "top 45%",
+                scrub: true,
+            },
+        });
+    }
 }

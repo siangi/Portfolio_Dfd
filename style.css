@@ -79,13 +79,19 @@ a {
 header,
 section,
 nav {
-    padding: 0 10% 0 10%;
+    padding-right: 10%;
+    padding-left: 10%;
     height: fit-content;
     background-color: var(--background-light);
 }
 
 header {
-    min-height: 93vh;
+    padding-top: 3rem;
+    min-height: 80vh;
+}
+
+header h3 {
+    margin-top: 5rem;
 }
 
 nav {
@@ -96,6 +102,12 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+.name-title hr {
+    height: 0.5rem;
+    background-color: var(--accent);
+    border-radius: 0.5rem;
 }
 
 nav ul {
@@ -195,16 +207,30 @@ section {
     }
 }
 
+.project {
+    overflow-x: hidden;
+}
+
 article {
     width: 100%;
     height: 40vh;
     display: flex;
     flex-direction: row;
     margin-top: 6rem;
+    transition-duration: 0.3s;
+}
+
+article:hover {
+    scale: 1.1;
+    translate: 12.5%;
 }
 
 article:nth-child(2n) {
     flex-direction: row-reverse;
+}
+
+article:nth-child(2n):hover {
+    translate: -12.5%;
 }
 
 .article-graphic {
@@ -254,13 +280,6 @@ article:nth-child(2n) {
 
 footer {
     padding: 0 10% 3rem 10%;
-}
-
-footer ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
 }
 
 .detail-image-grid {
