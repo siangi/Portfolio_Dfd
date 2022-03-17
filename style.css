@@ -156,6 +156,26 @@ section {
     transition: transform 0.25s ease-out;
 }
 
+.right-arrow::after {
+    margin-left: 0.3rem;
+    content: "→";
+}
+
+.left-arrow::after {
+    margin-left: 0.3rem;
+    content: "←";
+}
+
+.up-arrow::after {
+    margin-left: 0.3rem;
+    content: "↑";
+}
+
+.down-arrow::after {
+    margin-left: 0.3rem;
+    content: "↓";
+}
+
 .underline-on-hover:hover::after {
     transform-origin: bottom left;
     transform: scaleX(1);

@@ -2,6 +2,7 @@
 
 window.onload = () => {
     fadeHomeLink();
+    navbarLinkArrows();
 };
 
 // header flying in
@@ -24,5 +25,23 @@ function fadeHomeLink() {
             start: "top center",
             end: "top top",
         },
+    });
+}
+
+function navbarLinkArrows() {
+    let target = document.querySelector("nav a[href='#projects']");
+    gsap.to(target, {
+        onCompleteParams: [target],
+        onComplete: (param) => {
+            param.classList.toggle("up-arrow");
+            param.classList.toggle("down-arrow");
+        },
+        scrollTrigger: {
+            trigger: "#projects",
+            start: "top 25%",
+            end: "top top",
+            toggleActions: "play restart restart none",
+        },
+        duration: 0.1,
     });
 }
