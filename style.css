@@ -58,7 +58,8 @@ h4 {
     font-weight: 700;
 }
 
-img {
+img,
+video {
     max-width: 100%;
 }
 
@@ -232,8 +233,15 @@ article:nth-child(2n):hover {
     transform: scale(1.1) translate(-12.5%, 0);
 }
 
+@media screen and (max-width: 768px) {
+    article:hover,
+    article:nth-child(2n):hover {
+        transform: scale(1.1);
+    }
+}
+
 .article-graphic {
-    background-color: black;
+    background-color: var(--background-light);
     height: 100%;
     width: 40%;
 }
@@ -275,6 +283,33 @@ article:nth-child(2n):hover {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+#font-and-cards .article-graphic {
+    background-image: url("images/fonts-and-cards/fontsCard.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#colors-and-animations .article-graphic {
+    background-image: url("images/colors-and-animations/colorAnim3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#responsive-design .article-graphic {
+    background-image: url("images/responsive-design/responsiveSmall1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#design-with-frameworks .article-graphic {
+    background-image: url("images/design-with-frameworks/FrameworkCombined.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 footer {
@@ -349,7 +384,7 @@ footer {
 
 header.small {
     padding-top: 3rem;
-    min-height: 30vh;
+    min-height: 0vh;
 }
 
 .split-texts {
