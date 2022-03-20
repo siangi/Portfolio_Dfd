@@ -1,24 +1,32 @@
-"use strict";
+let nameVisible = true;
 
 window.onload = () => {
     headerFadeIn();
+    // createHeaderText();
     fadeHomeLink();
     navbarLinkArrows();
     articleImagesScaling();
     registerPojectsClicks();
+    randomMoveBalls();
 };
 
-// header flying in
-// use variable font for header?? and update thickness
 // title reacting to mouse position
+function createHeaderText() {
+    const parent = document.querySelector(".name-title");
+    createTextInLetters("h1", "left show", "SIMON", parent);
+    createTextInLetters("h1", "left hidden", "SUCKS", parent);
+}
 
-// on hover project cards get bigger, shadow?, background?
-// images get smaller, text fades in
-//
+function createTextInLetters(tag, classes, text, parent) {
+    const chars = text.split("");
+    chars.forEach((character) => {
+        let newElem = document.createElement(tag);
+        newElem.className = classes;
+        newElem.textContent = character;
+        parent.appendChild(newElem);
+    });
+}
 
-// fix the navbar when you scroll out of the header, show "home" link
-
-// as soon as we leave the header, the home link appears.
 function headerFadeIn() {
     gsap.from(".name-title .left", {
         x: "-10vw",
@@ -70,7 +78,6 @@ function articleImagesScaling() {
 
     for (let i = 0; i < targets.length; i++) {
         let article = targets[i];
-        console.log("test");
 
         gsap.from(article, {
             opacity: 0.3,
@@ -97,4 +104,50 @@ function registerPojectsClicks() {
             window.location.assign(link);
         });
     });
+}
+
+function randomMoveBalls() {
+    const blueform = document.querySelector("#blueform");
+    const yellowform = document.querySelector("#yellowform");
+
+    const positions = getPositionsArray(blueform.clientWidth, blueform.clientHeight, document.documentElement.clientWidth, document.documentElement.clientHeight);
+    const loops = 30;
+    const animLength = 2;
+
+    console.log(blueform.scrollWidth, blueform.scrollHeight);
+    const timeline = gsap.timeline({ repeat: -1 });
+    for (let i = 0; i < loops; i++) {
+        const bluePos = positions[Math.floor(Math.random() * positions.length)];
+        const yellowPos = positions[Math.floor(Math.random() * positions.length)];
+        timeline.to(
+            blueform,
+            {
+                x: bluePos[0],
+                y: bluePos[1],
+                duration: animLength,
+            },
+            animLength * i
+        );
+
+        timeline.to(
+            yellowform,
+            {
+                x: yellowPos[0],
+                y: yellowPos[1],
+                duration: animLength,
+            },
+            animLength * i
+        );
+    }
+
+    timeline.play();
+}
+
+function getPositionsArray(formWidth, formHeight, boundsWidth, boundsHeight) {
+    return [
+        [0, 0],
+        [boundsWidth - formWidth, 0],
+        [0, boundsHeight - formHeight],
+        [boundsWidth - formWidth, boundsHeight - formHeight],
+    ];
 }
